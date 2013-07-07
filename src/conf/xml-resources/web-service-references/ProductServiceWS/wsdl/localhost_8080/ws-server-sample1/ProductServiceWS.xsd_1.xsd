@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://sample1.server.ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://sample1.server.ws/">
+
+<xs:element name="getProductDetails" type="tns:getProductDetails"/>
+
+<xs:element name="getProductDetailsResponse" type="tns:getProductDetailsResponse"/>
+
+<xs:element name="getProductList" type="tns:getProductList"/>
+
+<xs:element name="getProductListResponse" type="tns:getProductListResponse"/>
+
+<xs:complexType name="getProductList">
+<xs:sequence>
+<xs:element name="partOfName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productListDto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productListDto">
+<xs:sequence>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductDetails">
+<xs:sequence>
+<xs:element name="id" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productDetailsDto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productDetailsDto">
+<xs:sequence>
+<xs:element name="amount" type="xs:decimal" minOccurs="0"/>
+<xs:element name="available" type="xs:boolean"/>
+<xs:element name="count" type="xs:int"/>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
